@@ -1,0 +1,8 @@
+--find-links https://download.pytorch.org/whl/torch_stable.html
+Pillow
+torch==1.12.1+cu113
+torchvision==0.13.1+cu113
+grad-cam==1.4.3
+torchmetrics==0.7.0
+pytorch_lightning==1.8.6
+timm==0.4.12
