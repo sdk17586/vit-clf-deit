@@ -1,2 +1,42 @@
 # vit-clf-deit-classification
-이곳에는 사전학습된 weight.pth를 제공하지 않습니다. 사전학습된 weight.pth를 원하신다면 sdk17586@naver.com 혹은 010-3827-7961 로 메일 바랍니다. 데이터셋의 구성은 sample의 .dat파일과 폴더 구성을 참고해주세요. 실행 방법은 bin/train.py을 실행시켜주세요. 더 자세한 것이 궁금하시다면 위의 연락수단으로 연락 바랍니다.
+
+## docker_image_Build
+```bat
+docker build -t dnn_test .
+```
+## Container
+```bat
+docker run -it \
+    --name dnn_test \
+    --privileged \
+    --gpus all \
+    --network host \
+    -e DISPLAY=$DISPLAY \
+    -e QT_X11_NO_MITSHM=1 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+    -v /etc/localtime:/etc/localtime:ro \
+    -e TZ=Asia/Seoul \
+    -v /dev:/dev \
+    -w /root \
+    dnn_test:latest
+```
+## container_setting
+```bat
+docker exec -it dnn_test bash
+
+git clone https://github.com/sdk17586/vit-clf-deit.git
+
+mkdir -p /root/vit-clf-deit/weight
+
+```
+
+## training
+```bat
+python3 /root/vit-clf-deit/bin/train.py
+```
+
+## predict
+```bat
+python3 /root/vit-clf-deit/bin/predict.py
+```
+
