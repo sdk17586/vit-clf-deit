@@ -1,0 +1,22 @@
+{
+	"classData": [
+		{
+			"className": "cat",
+			"filePath": [
+				"cat.1.jpg",
+				"cat.2.jpg",
+				"cat.3.jpg",
+				"cat.4.jpg"
+			]
+		},
+		{
+			"className": "dog",
+			"filePath": [
+				"dog.1.jpg",
+				"dog.2.jpg",
+				"dog.3.jpg",
+				"dog.4.jpg"
+			]
+		}
+	]
+}
