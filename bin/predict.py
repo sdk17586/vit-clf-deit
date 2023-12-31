@@ -83,9 +83,9 @@ class Predictor():
             self.model.to(self.device)
             
             target_layer = [
-                            self.model.patch_embed.proj,
-                            self.model.layers[2].blocks[1].modulation.focal_layers[2],
-                            self.model.layers[3].blocks[1].modulation.focal_layers[2],                            
+                            self.model.patch_embed.proj
+                            #self.model.layers[2].blocks[1].modulation.focal_layers[2],
+                            #self.model.layers[3].blocks[1].modulation.focal_layers[2],                            
                             ]
 
             self.gradCamModel = GradCAMPlusPlus(model=self.model, target_layers=target_layer, use_cuda=torch.cuda.is_available())
