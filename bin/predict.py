@@ -29,7 +29,7 @@ class Predictor():
         self.pathInfo = pathInfo
         self.modelPath = self.pathInfo["modelPath"] if "modelPath" in self.pathInfo else '/app'
         self.weightPath = self.pathInfo["weightPath"] if "weightPath" in self.pathInfo else "/app/weight"
-        self.log = Logger(logPath=os.path.join(self.modelPath, "log/predict.log"), logLevel="info")
+        self.log = Logger(logPath=os.path.join(self.modelPath, "log/predict.log"), logLevel="INFO")
 
         # set cpu/gpu
         self.setGpu()
